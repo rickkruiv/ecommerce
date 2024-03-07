@@ -10,14 +10,16 @@ ul {
     list-style: none;
 }
 
-a {
+a, 
+span {
     text-decoration: none;
-    color: #444;
+    color: #37a1f7;
     transition: .4s;
 }
 
-a:hover {
-    color: #37a1f7;
+a:hover, 
+span:hover {
+    color: #1d5889;
 }
 /* navbar */
 #navbar-container {
@@ -86,6 +88,7 @@ a:hover {
     border: 1px solid #ddd;
     border-radius: 10px;
     margin: 0 auto;
+    margin-top: 3rem;
 }
 
 #side-login,
@@ -117,18 +120,25 @@ a:hover {
     padding: 3rem 1.5rem;
 }
 
-#description {
-    text-align: left;
-    margin-bottom: 1rem;
+#img-content {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
-#description h2 {
+.description {
+    text-align: left;
+    margin-bottom: 1rem;
+    padding: 1rem;
+}
+
+.description h2 {
     color: #f4f4f4;
     font-size: 1.3rem;
     margin-bottom: .5rem;
 }
 
-#description p {
+.description p {
     font-size: .9rem;
     color: #fafafa;
 }
@@ -177,7 +187,8 @@ form h2:before {
     }
 }
 
-form h2:after {
+form h2::after,
+form#signup h2::after {
     content: '';
     position: absolute;
     bottom: -5px;
@@ -186,7 +197,15 @@ form h2:after {
     height: 5px;
     border-radius: 10px;
     background: linear-gradient(to right , #37a1f7 25%, #FF6D91 75%);
+}
+
+form h2::after {
     animation: animation2 1s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+form#signup h2::after {
+    animation: animation21 1s ease-in-out;
     animation-fill-mode: forwards;
 }
 
@@ -204,6 +223,20 @@ form h2:after {
     }
 }
 
+@keyframes animation21 {
+    0% {
+        width: 0px;
+    }
+
+    50% {
+        width: 0px;
+    }
+
+    100% {
+        width: 80px;
+    }
+}
+
 #form-box {
     margin: 2rem auto;
 }
@@ -213,6 +246,7 @@ form h2:after {
     width: 100%;  
 }
 
+#form-box input[type="text"],
 #form-box input[type="email"],
 #form-box input[type="password"] {
     border: none;
@@ -223,11 +257,13 @@ form h2:after {
     transition: .4s;
 }
 
+#form-box input[type="text"]::placeholder,
 #form-box input[type="email"]::placeholder,
 #form-box input[type="password"]::placeholder {
     color: #aaa;
 }
 
+#form-box input[type="text"]:focus,
 #form-box input[type="email"]:focus,
 #form-box input[type="password"]:focus {
     border-bottom: 1px solid #c6e5ff;
@@ -257,15 +293,22 @@ form h2:after {
 /* forgot and register */
 
 #forgot-pass, 
-#register {
+#register,
+#getin {
     font-size: 12px;
     text-align: center;
     margin-bottom: .5rem;
 }
 
 #forgot-pass a, 
-#register a {
+#register span,
+#getin span {
     font-weight: bold;
+}
+
+#register span,
+#getin span {
+    cursor: pointer;
 }
 
 /* footer */

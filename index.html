@@ -23,20 +23,28 @@
                 <!-- lado da imagem -->
                 <div id="side-image">
                     <div id="img-container">
-                        <div id="description">
-                            <h2>Take a step forward in <br> your online shopping journey!</h2>
-                            <p>Log in now to access exclusive deals and a wide selection of high-quality products.</p>
-                        </div>
-                        <div id="img">
-                            <img src="img/silky-shopping-sale.png" alt="">
+                        <div id="img-content">
+                            <div id="loginDesc" class="description">  
+                                <h2>Take a step forward in <br> your online shopping journey!</h2>
+                                <p>Log in now to access exclusive deals and a wide selection of high-quality products.</p>
+                            </div>
+                            <div id="registerDesc" class="description" style="display: none;">  
+                                <h2>Take a step forward in <br> your online shopping journey!</h2>
+                                <p>Join our exclusive community today! Sign up now to access top-notch products and explore endless possibilities tailored just for you.</p>
+                            </div>
+                            <div id="img">
+                                <img src="img/silky-shopping-sale.png" alt="">
+                            </div>
                         </div>
                     </div>
                 </div>
                 <!-- lado do login -->
                 <div id="side-login">
                     <!-- Formulário de login -->
-                    <form>
-                        <h2>Login</h2>
+                    <form id="signin">
+                        <div class="title">
+                            <h2>Login</h2>
+                        </div>
                         <div id="login-form">
                             <div id="form-box">
                                 <!-- email -->
@@ -54,7 +62,35 @@
                         </div>
                         <!-- reguster -->
                         <div id="register">
-                            <p>Dont have an account? <a href="#">Create one!</a></p>
+                            <p>Dont have an account? <span onclick="toggleForm()"> Create one!</span></p>
+                        </div>
+                    </form>
+                    <!-- formulário de registro -->
+                    <form id="signup" style="display: none;">
+                        <div class="title">
+                            <h2>Sign Up</h2>
+                        </div>
+                        <div id="login-form">
+                            <div id="form-box">
+                                <!-- email -->
+                                <label for="email">Email</label>
+                                <input type="email" name="email" id="email" placeholder="Enter your email" required>
+                                <!-- name -->
+                                <label for="name">Name</label>
+                                <input type="text" name="name" id="name" placeholder="Enter your name" required>
+                                <!-- phone -->
+                                <label for="phone">Phone number</label>
+                                <input type="text" name="phone" id="phone" placeholder="(99) 99999-9999" required>
+                                <!-- senha -->
+                                <label for="password">Password</label>
+                                <input type="password" name="password" id="password" placeholder="Enter your password" required>
+                                <input type="password" name="password" id="password" placeholder="Confirm your password" required>
+                                <input type="submit" value="Entrar">
+                            </div>
+                        </div>
+                        <!-- logar -->
+                        <div id="getin">
+                            <p>Have an account? <span onclick="toggleForm()">Get in now!</span></p>
                         </div>
                     </form>
                 </div>
@@ -80,5 +116,7 @@
         </div>
         <p>2024 &copy; <a href="https://github.com/rickkruiv" target="_blank">Rickkruiv</a></p>
     </footer>
+
+    <script src="login.js"></script>
 </body>
 </html>
